@@ -28,7 +28,7 @@ Modification of the following properties is supported:
 - TID
 - SID
 
-Pokéswitch also supports (bulk) cloning, exporting, and releasing Pokémon. It can import PK* files of the appropriate type (e.g. PK8 for Sword/Shield) and export saves.
+Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PKM files of the appropriate type (e.g. PK8 for Sword/Shield) and import/export saves.
 
 Note that shinifying a Pokémon you caught in Sword/Shield will result in you no longer being recognized as their original trainer due to modification of the Pokémon's SID. This method is used for Pokémon originating in Sword/Shield because most PIDs generated therein are correlated with several other properties and thus cannot be arbitrarily modified (while maintaining legality).
 

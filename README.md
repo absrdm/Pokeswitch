@@ -1,6 +1,8 @@
 # READ PRIOR TO USE
 This program is very new and largely untested. In fact, it has not been directly tested on all targeted games (as I do not own all of them.) **I highly recommend backing up saves prior to use.** I am not liable for any data loss/corruption resulting from use of this program.
 
+If you would like to confirm that Pokéswitch is working with your game/system, feel free to post the name of the game and/or your system configuration on the [GBAtemp thread](https://gbatemp.net/threads/pokeswitch-simple-pokemon-save-editor-for-switch.677289/).
+
 # Description
 Pokéswitch is a Pokémon save editor designed to run natively on the Nintendo Switch. It aims to support the following games:
 - Pokémon Sword/Shield

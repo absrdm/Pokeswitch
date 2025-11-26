@@ -21,9 +21,11 @@ Modification of the following properties is supported:
 - Stat Nature
 - Ability
 - Shininess (for Pokémon originating in Sword/Shield via SID manipulation and for Pokémon originating in the other supported games via PID manipulation)
+- Hold Item
 - IVs
 - EVs
 - HT Profile
+- Form (for most Pokémon with persistent alternate forms)
 - Original Tera Type (for Scarlet/Violet)
 - Effective Tera Type (for Scarlet/Violet)
 - PID
@@ -38,9 +40,9 @@ Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Poké
 Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and launch it via HBL. Select the "Information" option from the main menu to view controls. (Note that the main menu will not be available if no supported savedata is present on the system.)
 
 # Images
-![main_menu](https://github.com/user-attachments/assets/a86d6f1a-c212-4794-9645-eca2f39067b1)
+![main_menu](https://github.com/user-attachments/assets/e755ad37-8d1b-4a38-85d1-bda982f742d1)
 
-![box](https://github.com/user-attachments/assets/1523becd-1a67-4818-9300-88a570f79abc)
+![box](https://github.com/user-attachments/assets/1e3747f0-cc20-451c-a394-c50d7914836c)
 
 # Notes
 

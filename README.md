@@ -20,11 +20,17 @@ Modification of the following properties is supported:
 - Nature
 - Stat Nature
 - Ability
-- Shininess (for Pokémon originating in Sword/Shield via SID manipulation and for Pokémon originating in the other supported games via PID manipulation)
+- Shininess (for Pokémon originating in Sword/Shield via legacy SID manipulation and for Pokémon originating in the other supported games via PID manipulation)
 - Hold Item
 - IVs
 - EVs
 - HT Profile
+- Moves
+- Maximum PP
+- Relearn Moves
+- TR Flags (for Sword/Shield)
+- TM Flags (for Scarlet/Violet)
+- Plus Moves (for Z-A)
 - Form (for most Pokémon with persistent alternate forms)
 - Original Tera Type (for Scarlet/Violet)
 - Effective Tera Type (for Scarlet/Violet)
@@ -37,7 +43,7 @@ Modification of the following properties is supported:
 Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PKM files of the appropriate type (e.g. PK8 for Sword/Shield) and import/export saves.
 
 # Usage
-Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and launch it via HBL. Select the "Information" option from the main menu to view controls. (Note that the main menu will not be available if no supported savedata is present on the system.)
+Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and launch it via HBL title override (issues may occur in applet mode). Select the "Information" option from the main menu to view controls. (Note that the main menu will not be available if no supported savedata is present on the system.)
 
 # Images
 ![main_menu](https://github.com/user-attachments/assets/e755ad37-8d1b-4a38-85d1-bda982f742d1)
@@ -47,10 +53,22 @@ Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and l
 # Notes
 
 ## Shinification in Sword/Shield
-Shinifying a Pokémon you caught in Sword/Shield will result in you no longer being recognized as their original trainer due to modification of the Pokémon's SID. This method is used for Pokémon originating in these games because most PIDs generated therein are correlated with several other properties and thus cannot be arbitrarily modified (while maintaining legality).
+Shinifying a Pokémon you caught in Sword/Shield will result in you no longer being recognized as their original trainer due to modification of the Pokémon's legacy SID. This method is used for Pokémon originating in these games because most PIDs generated therein are correlated with several other properties and thus cannot be arbitrarily modified (while maintaining legality).
 
 ## Moving Multiple Pokémon (via Multiselect)
 If all selected Pokémon are in the same box and the target slot is compatible, their positions relative to one another will be preserved. If not, the selection will be flattened in the order in which it was added to.
+
+## Shiftable Fields
+A selected move's maximum PP can be modified via the L/R buttons.
+
+## TR/TM/Plus Move Handling
+Some games store flags related to a Pokémon's moves. Of the supported games, these are Sword/Shield (for TRs), Scarlet/Violet (for TMs), and Z-A (for Plus Moves). When modifying species/form, Pokéswitch will attempt to configure these flags to legal values.
+
+For Sword/Shield and Scarlet/Violet, Pokéswitch will also attempt to set the appropriate TR or TM flag, respectively, when setting a move which could only (aside from nonstandard means) be legally known at the current level via the aforementioned.
+
+For Z-A, Pokéswitch will also attempt to configure natural Plus Move flags when modifying level.
+
+These flags will be cleared during the aforementioned handling only if they are not recognized to be legal. They can also be modified manually in a Pokémon's summary.
 
 # FAQs
 
@@ -62,6 +80,9 @@ No. If you need to transfer Pokémon, I would recommend using Pokémon Home, as 
 
 ## How do I import a PKM file?
 In Select Mode (blue cursor), press A on any empty box slot, then select the PKM file to import.
+
+## A service initialization error is returned upon launch. Is there a fix for this?
+This might be resolved by launching via HBL title override (HBL opened by holding the R button while launching a game, rather than the Album). If it is not, feel free to post the specific issue on the [GBAtemp thread](https://gbatemp.net/threads/pokeswitch-simple-pokemon-save-editor-for-switch.677289/).
 
 ## Why didn't you make this ~6 years ago?
 I thought someone would make something like this but no one ever did

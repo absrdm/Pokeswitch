@@ -46,7 +46,7 @@ Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Poké
 Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and launch it via HBL title override (issues may occur in applet mode). Select the "Information" option from the main menu to view controls. (Note that the main menu will not be available if no supported savedata is present on the system.)
 
 # Images
-![main_menu](https://github.com/user-attachments/assets/e755ad37-8d1b-4a38-85d1-bda982f742d1)
+![main_menu](https://github.com/user-attachments/assets/ca0aa8e8-196b-4000-916e-ee5079d7bbb8)
 
 ![box](https://github.com/user-attachments/assets/1e3747f0-cc20-451c-a394-c50d7914836c)
 
@@ -89,5 +89,6 @@ I thought someone would make something like this but no one ever did
 
 # Acknowledgements
 The UI was created with (a slightly modified version of) [Plutonium](https://github.com/XorTroll/Plutonium) by [XorTroll](https://github.com/XorTroll).
+
 
 The Nintendo Switch development platform, [libnx](https://github.com/switchbrew/libnx), was provided by [Switchbrew](https://switchbrew.org/wiki/Main_Page).

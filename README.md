@@ -31,9 +31,16 @@ Modification of the following properties is supported:
 - TR Flags (for Sword/Shield)
 - TM Flags (for Scarlet/Violet)
 - Plus Moves (for Z-A)
+- Poké Ball
 - Form (for most Pokémon with persistent alternate forms)
+- Dynamax Level (for Sword/Shield)
+- Gigantamax Factor (for Sword/Shield)
 - Original Tera Type (for Scarlet/Violet)
 - Effective Tera Type (for Scarlet/Violet)
+- Height (for Sword/Shield, Brilliant Diamond/Shining Pearl, and Scarlet/Violet)
+- Weight (for Sword/Shield, Brilliant Diamond/Shining Pearl, and Scarlet/Violet)
+- Scale (for Scarlet/Violet and Z-A)
+- Alpha Condition (for Z-A)
 - PID
 - EC
 - OT
@@ -89,6 +96,5 @@ I thought someone would make something like this but no one ever did
 
 # Acknowledgements
 The UI was created with (a slightly modified version of) [Plutonium](https://github.com/XorTroll/Plutonium) by [XorTroll](https://github.com/XorTroll).
-
 
 The Nintendo Switch development platform, [libnx](https://github.com/switchbrew/libnx), was provided by [Switchbrew](https://switchbrew.org/wiki/Main_Page).

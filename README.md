@@ -45,7 +45,7 @@ Modification of the following properties is supported:
 - TID
 - SID
 
-Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PKM files of the appropriate type (e.g. PK8 for Sword/Shield) and import/export saves.
+Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PK8/PB8/PK9/PA9 files and import/export saves.
 
 Pokéswitch features Pokémon Home-like functionality in the hyperboxes. **Note that Pokémon transferred to a different series via the hyperboxes will generally be rendered illegal due to absence of a valid Pokémon Home tracker. Online interaction of these Pokémon, particularly with Pokémon Home, can result in bans/suspensions.**
 
@@ -69,6 +69,15 @@ If all selected Pokémon are in the same box and the target slot is compatible, 
 
 ## Shiftable Fields
 A selected move's maximum PP can be modified via the L/R buttons.
+
+In addition to text input, the following fields can be modified via the L/R buttons (and in bulk via the ZL/ZR buttons):
+- Level
+- IVs
+- EVs
+- Dynamax Level
+- Height
+- Weight
+- Scale
 
 ## TR/TM/Plus Move Handling
 Some games store flags related to a Pokémon's moves. Of the supported games, these are Sword/Shield (for TRs), Scarlet/Violet (for TMs), and Z-A (for Plus Moves). When modifying species/form, Pokéswitch will attempt to configure these flags to legal values.
@@ -94,7 +103,10 @@ HIDs are processed per-hyperbox file, so importing a hyperbox file can affect wh
 - Hold items are stored per-series. When transferred to a series for the first time, a Pokémon's hold item will default to that of the series from which the Pokémon was originally transferred (unless this is not a valid hold item in the destination series.)
 - Moves and relearn moves are stored per-series. When transferred to a series for the first time, a Pokémon's moves and relearn moves will default to those of the series from which the Pokémon was originally transferred (unless these e.g. do not exist in the destination series.) If none of a Pokémon's moves can be transferred to the destination series, Pokéswitch will attempt to default them to moves in the Pokémon's learnset.
 - Since Sword/Shield do not support some Poké Balls at all, these will be defaulted to normal Poké Balls when transferring Pokémon to the aforementioned. Transferring Pokémon from Sword/Shield to the hyperboxes will not result in these Poké Balls being overwritten as long as the Pokémon being transferred are still in normal Poké Balls at the time of transfer.
-- Since Pokémon from Z-A are not officially transferable to other series, some met data is defaulted to compatibility values upon doing so.
+- Since Pokémon from Z-A are not officially transferable to other series, some met data is defaulted to compatibility values upon doing so. They are also given random weights.
+
+## Automatic Backups
+Pokéswitch will automatically attempt to create up to one save backup per game/user/day.
 
 # FAQs
 
@@ -102,7 +114,7 @@ HIDs are processed per-hyperbox file, so importing a hyperbox file can affect wh
 Yes, see the [NH Switch Guide](https://switch.hacks.guide/) for information regarding system exploitability.
 
 ## Can I use this to transfer Pokémon between the supported series?
-Yes, via the hyperboxes. However, I would recommend using Pokémon Home for this purpose if possible, as it generates tracking data server-side. Replicating this is not possible, and transferring a Pokémon between series without a valid Home tracker generally renders the Pokémon illegal.
+Yes, via the hyperboxes. However, it is recommended to use Pokémon Home for this purpose if possible, as the former generates tracking data server-side. Replicating this is not possible, and transferring a Pokémon between series without a valid Home tracker generally renders the Pokémon illegal.
 
 ## How do I import a PKM file?
 In Select Mode (blue cursor), press A on any empty box slot, then select the PKM file to import.
@@ -111,7 +123,7 @@ In Select Mode (blue cursor), press A on any empty box slot, then select the PKM
 This might be resolved by launching via HBL title override (HBL opened by holding the R button while launching a game, rather than the Album). If it is not, feel free to post the specific issue on the [GBAtemp thread](https://gbatemp.net/threads/pokeswitch-simple-pokemon-save-editor-for-switch.677289/).
 
 ## Can I use more than 1000 hyperboxes?
-This may be achieved by swapping between multiple hyperbox files as necessary, but it is recommended to read the notes regarding HIDs before doing so.
+This can be achieved by swapping between multiple hyperbox files as necessary, but it is recommended to read the notes regarding HIDs before doing so.
 
 ## Why didn't you make this ~6 years ago?
 I thought someone would make something like this but no one ever did

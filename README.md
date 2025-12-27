@@ -45,7 +45,7 @@ Modification of the following properties is supported:
 - TID
 - SID
 
-Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PK8/PB8/PK9/PA9 files and import/export saves.
+Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PK8/PB8/PK9/PA9 files and import/export saves. Searching for Pokémon by various criteria is also supported.
 
 Pokéswitch features Pokémon Home-like functionality in the hyperboxes. **Note that Pokémon transferred to a different series via the hyperboxes will generally be rendered illegal due to absence of a valid Pokémon Home tracker. Online interaction of these Pokémon, particularly with Pokémon Home, can result in bans/suspensions.**
 
@@ -62,7 +62,7 @@ Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and l
 # Notes
 
 ## Shinification in Sword/Shield
-Shinifying a Pokémon you caught in Sword/Shield will result in you no longer being recognized as their original trainer due to modification of the Pokémon's legacy SID. This method is used for Pokémon originating in these games because most PIDs generated therein are correlated with several other properties and thus cannot be arbitrarily modified (while maintaining legality).
+Shinifying a Pokémon you caught in Sword/Shield will result in you no longer being recognized as their original trainer due to modification of the Pokémon's legacy SID. This method is used for Pokémon originating in these games because most PIDs generated therein are correlated with several other properties and thus cannot be arbitrarily modified (while maintaining legality.)
 
 ## Moving Multiple Pokémon (via Multiselect)
 If all selected Pokémon are in the same box and the target slot is compatible, their positions relative to one another will be preserved. If not, the selection will be flattened in the order in which it was added to.
@@ -106,7 +106,7 @@ HIDs are processed per-hyperbox file, so importing a hyperbox file can affect wh
 - Since Pokémon from Z-A are not officially transferable to other series, some met data is defaulted to compatibility values upon doing so. They are also given random weights.
 
 ## Automatic Backups
-Pokéswitch will automatically attempt to create up to one save backup per game/user/day.
+Pokéswitch will automatically attempt to create up to one save backup in `/Pokeswitch/Save/[Version Name]` per game/user/day.
 
 # FAQs
 

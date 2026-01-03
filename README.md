@@ -5,6 +5,7 @@ This program is very new and largely untested. In fact, it has not been directly
 Pokéswitch is a Pokémon save editor designed to run natively on the Nintendo Switch. It aims to support the following games:
 - Pokémon Sword/Shield
 - Pokémon Brilliant Diamond/Shining Pearl
+- Pokémon Legends: Arceus
 - Pokémon Scarlet/Violet
 - Pokémon Z-A
 
@@ -19,14 +20,18 @@ Modification of the following properties is supported:
 - Stat Nature
 - Ability
 - Shininess (for Pokémon originating in Sword/Shield via legacy SID manipulation and for Pokémon originating in the other supported games via PID manipulation)
-- Hold Item
+- Hold Item (for Sword/Shield, Brilliant Diamond/Shining Pearl, Scarlet/Violet, and Z-A)
 - IVs
 - EVs
 - HT Profile
+- ELs (for Legends: Arceus)
 - Moves
-- Maximum PP
+- Maximum PP (for Sword/Shield, Brilliant Diamond/Shining Pearl, Scarlet/Violet, and Z-A)
 - Relearn Moves
+- Alpha Move (for Legends: Arceus)
 - TR Flags (for Sword/Shield)
+- Move Shop Flags (for Legends: Arceus)
+- Mastery Flags (for Legends: Arceus)
 - TM Flags (for Scarlet/Violet)
 - Plus Moves (for Z-A)
 - Poké Ball
@@ -35,17 +40,17 @@ Modification of the following properties is supported:
 - Gigantamax Factor (for Sword/Shield)
 - Original Tera Type (for Scarlet/Violet)
 - Effective Tera Type (for Scarlet/Violet)
-- Height (for Sword/Shield, Brilliant Diamond/Shining Pearl, and Scarlet/Violet)
-- Weight (for Sword/Shield, Brilliant Diamond/Shining Pearl, and Scarlet/Violet)
+- Height (for Sword/Shield, Brilliant Diamond/Shining Pearl, Legends: Arceus, and Scarlet/Violet)
+- Weight (for Sword/Shield, Brilliant Diamond/Shining Pearl, Legends: Arceus, and Scarlet/Violet)
 - Scale (for Scarlet/Violet and Z-A)
-- Alpha Condition (for Z-A)
+- Alpha Condition (for Legends: Arceus and Z-A)
 - PID
 - EC
 - OT
 - TID
 - SID
 
-Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PK8/PB8/PK9/PA9 files and import/export saves. Searching for Pokémon by various criteria is also supported.
+Pokéswitch also supports (bulk) moving, cloning, exporting, and releasing Pokémon. It can import PK8/PB8/PA8/PK9/PA9 files, import/export saves, and search for Pokémon by various criteria.
 
 Pokéswitch features Pokémon Home-like functionality in the hyperboxes. **Note that Pokémon transferred to a different series via the hyperboxes will generally be rendered illegal due to absence of a valid Pokémon Home tracker. Online interaction of these Pokémon, particularly with Pokémon Home, can result in bans/suspensions.**
 
@@ -68,23 +73,26 @@ Shinifying a Pokémon you caught in Sword/Shield will result in you no longer be
 If all selected Pokémon are in the same box and the target slot is compatible, their positions relative to one another will be preserved. If not, the selection will be flattened in the order in which it was added to.
 
 ## Shiftable Fields
-A selected move's maximum PP can be modified via the L/R buttons.
+In Sword/Shield, Brilliant Diamond/Shining Pearl, Scarlet/Violet, and Z-A, a selected move's maximum PP can be modified via the L/R buttons.
 
 In addition to text input, the following fields can be modified via the L/R buttons (and in bulk via the ZL/ZR buttons):
 - Level
 - IVs
 - EVs
+- ELs
 - Dynamax Level
 - Height
 - Weight
 - Scale
 
-## TR/TM/Plus Move Handling
-Some games store flags related to a Pokémon's moves. Of the supported games, these are Sword/Shield (for TRs), Scarlet/Violet (for TMs), and Z-A (for Plus Moves). When modifying species/form, Pokéswitch will attempt to configure these flags to legal values.
+## TR/Shop Move/Mastery/TM/Plus Move Handling
+Some games store flags related to a Pokémon's moves. Of the supported games, these are Sword/Shield (for TRs), Legends: Arceus (for shop moves and Mastery), Scarlet/Violet (for TMs), and Z-A (for Plus Moves). When modifying species/form, Pokéswitch will attempt to configure these flags to legal values.
 
-For Sword/Shield and Scarlet/Violet, Pokéswitch will also attempt to set the appropriate TR or TM flag, respectively, when setting a move which could only (aside from nonstandard means) be legally known at the current level via the aforementioned.
+For Sword/Shield, Legends: Arceus, and Scarlet/Violet, Pokéswitch will attempt to set the appropriate TR, move shop, or TM flag; respectively, when setting a move which could only (aside from nonstandard means) be legally known at the current level via the aforementioned. For Legends: Arceus, Pokéswitch will similarly reevaluate any move shop flags of known moves when modifying level.
 
-For Z-A, Pokéswitch will also attempt to configure natural Plus Move flags when modifying level.
+For Legends: Arceus, Pokéswitch will attempt to configure relevant move shop and Mastery flags upon Alpha Move modification.
+
+For Z-A, Pokéswitch will attempt to configure natural Plus Move flags when modifying level.
 
 These flags will be cleared during the aforementioned handling only if they are not recognized to be legal. They can also be modified manually in a Pokémon's summary.
 
@@ -92,18 +100,20 @@ These flags will be cleared during the aforementioned handling only if they are 
 
 If a Pokémon transferred to the hyperboxes is recognized to already exist therein, the version in the hyperboxes will be updated with the version being transferred. This allows for a Pokémon's data to be aggregated across series.
 
-Within the hyperboxes, Pokémon are identified by a value (HID) consisting of the PID and a derivate of the name. (This means that modifying a Pokémon's PID or name will generally result in the Pokémon not being recognized as the original.) The HID is partially derived from the name to obviate any necessity to modify PIDs (which can result in legality issues) when attempting to transfer e.g. multiple modified clones of a Pokémon to the hyperboxes as distinct entities.
+Within the hyperboxes, Pokémon are identified by a value (HID) consisting of the PID and a derivate of the name. This means that modifying a Pokémon's PID or name will generally result in the Pokémon not being recognized as the original. The HID is partially derived from the name to obviate any necessity to modify PIDs (which can result in legality issues) when attempting to transfer e.g. multiple modified clones of a Pokémon to the hyperboxes as distinct entities.
 
 HIDs are processed per-hyperbox file, so importing a hyperbox file can affect whether a Pokémon is recognized to exist within the hyperboxes.
 
 ## Hyperbox Minutiae
 
-- When a Pokémon in a hyperbox is updated, most properties thereof are overwritten (provided that they exist in the version being transferred.) Exceptions include (but are not necessarily limited to) met data and some OT data.
+- When a Pokémon in the hyperboxes is updated, most properties thereof are overwritten (provided that they exist in the version being transferred.) Exceptions include (but are not necessarily limited to) met data and some OT data.
 - Releasing a Pokémon from the hyperboxes will result in the deletion of all of the Pokémon's data from the hyperboxes. (If transferred back to the hyperboxes thereafter, the Pokémon will be processed as a new transfer.)
-- Hold items are stored per-series. When transferred to a series for the first time, a Pokémon's hold item will default to that of the series from which the Pokémon was originally transferred (unless this is not a valid hold item in the destination series.)
-- Moves and relearn moves are stored per-series. When transferred to a series for the first time, a Pokémon's moves and relearn moves will default to those of the series from which the Pokémon was originally transferred (unless these e.g. do not exist in the destination series.) If none of a Pokémon's moves can be transferred to the destination series, Pokéswitch will attempt to default them to moves in the Pokémon's learnset.
+- Hold items are stored per-series. When transferred to a series for the first time, a Pokémon's hold item will default to that of the series from which the Pokémon was originally transferred (unless this is not a valid hold item in the destination series or the latter is Legends: Arceus.)
+- Moves and relearn moves are stored per-series. When transferred to a series for the first time, a Pokémon's moves will default to those of the series from which the Pokémon was originally transferred (unless these e.g. do not exist in the destination series.) If none of a Pokémon's moves can be transferred to the destination series, Pokéswitch will attempt to default them to moves in the Pokémon's learnset.
 - Since Sword/Shield do not support some Poké Balls at all, these will be defaulted to normal Poké Balls when transferring Pokémon to the aforementioned. Transferring Pokémon from Sword/Shield to the hyperboxes will not result in these Poké Balls being overwritten as long as the Pokémon being transferred are still in normal Poké Balls at the time of transfer.
-- Since Pokémon from Z-A are not officially transferable to other series, some met data is defaulted to compatibility values upon doing so. They are also given random weights.
+- When searching the hyperboxes by hold item (particularly with a value of "None",) Pokémon from Legends: Arceus will be excluded due to the absence of hold items therein (unless they have visited other series.)
+- Since Pokémon from Z-A are not officially transferable to other series, some met data is defaulted to compatibility values upon doing so.
+- The Alpha conditions of Legends: Arceus and Z-A are processed separately. This means that an Alpha Pokémon in either game is not necessarily an Alpha Pokémon in the other. Within the hyperboxes, a Pokémon will display as an Alpha if it is one in either game.
 
 ## Automatic Backups
 Pokéswitch will automatically attempt to create up to one save backup in `/Pokeswitch/Save/[Version Name]` per game/user/day.

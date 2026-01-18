@@ -60,9 +60,11 @@ Additional information can be found in the [GBAtemp thread](https://gbatemp.net/
 Copy `Pokeswitch.nro` to `/switch` (or wherever else) on your microSD card and launch it via HBL title override (issues may occur in applet mode). Select the "Information" option from the main menu to view controls. (Note that the main menu will not be available if no supported savedata is present on the system.)
 
 # Images
-![main_menu](https://github.com/user-attachments/assets/ca0aa8e8-196b-4000-916e-ee5079d7bbb8)
+![main_menu](https://github.com/user-attachments/assets/d3c481b8-15ae-4c79-a94e-496a7d429760)
 
-![box](https://github.com/user-attachments/assets/1e3747f0-cc20-451c-a394-c50d7914836c)
+![box](https://github.com/user-attachments/assets/b509ad8d-6880-4985-807e-b74a2860e1be)
+
+![inventory](https://github.com/user-attachments/assets/dade211a-bae2-42c0-801b-bae2e0705a26)
 
 # Notes
 
